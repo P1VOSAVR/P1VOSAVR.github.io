@@ -1,0 +1,134 @@
+:root {
+
+    --text: #f7f9fd;
+    --background: #03070c;
+    --primary: #a5c2e9;
+    --secondary: #081321;
+    --accent: #3171c4;
+
+
+
+}
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+nav {
+    
+    color: var(--text);
+    border: var(--secondary) 2px solid;
+    background-color: var(--accent);
+    width: 30%;
+    height: 3.5rem;
+    margin-top: 1rem;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 2rem;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+i {
+    transition: transform 0.3s, color 0.3s;
+    
+}
+
+a i {
+    transform: translateY(0%);
+    color: var(--primary);
+    
+    
+}
+
+a:hover i {
+    transform: translateY(-20%);
+    color: rgb(214, 214, 214);
+
+}
+a.active i {
+    color: var(--buttonclicked);
+}
+.page{
+    min-height: 100vh;
+    height: 100%;
+    padding: 5rem 1rem;
+    overflow-x: hidden; 
+
+}
+
+
+.box{
+    border:3px solid #000000;
+    aspect-ratio: 2;
+    border-radius: 2rem;
+    background-color: var(--text);
+}
+
+
+
+.row :nth-child(even) > div{ 
+    animation: boxinright ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 3s;
+}
+.row :nth-child(odd) > div{
+    animation: boxinleft ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+
+
+@keyframes boxinleft {
+    0% {
+        transform: translateX(-100%);
+    }
+    25% {
+        transform: translateX(30%);
+    }
+    50% {
+        transform: translateX(-20%);
+    }
+    75% {
+        transform: translateX(3%);
+    }
+    100% {
+        transform: translateX(0%);
+        box-shadow: 3px 3px #000000, -1em 0 .4em #000000;
+    }  
+}
+
+@keyframes boxinright {
+    0% {
+        transform: translateX(100%);
+    }
+    25% {
+        transform: translateX(-30%);
+    }
+    50% {
+        transform: translateX(20%);
+    }
+    75% {
+        transform: translateX(-3%);
+    }
+    100% {
+        transform: translateX(0%);
+        box-shadow: 3px 3px #000000, -1em 0 .4em #000000;
+    }  
+}
+
+
+@media screen and (max-width: 720px) {
+    nav {
+       width: 80%;
+    }
+
+    
+ }
